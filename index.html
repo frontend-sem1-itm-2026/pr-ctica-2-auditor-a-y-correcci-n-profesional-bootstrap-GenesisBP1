@@ -2,144 +2,131 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <!-- ERROR intencional: falta viewport para responsive real -->
-  <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Práctica 2 — Auditoría Bootstrap</title>
+  <title>Práctica 2 — Auditoría Bootstrap (Corregido)</title>
 
-  <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-
-  <!-- CSS propio -->
   <link rel="stylesheet" href="styles.css">
+ 
 </head>
 <body>
 
-  <!-- NAVBAR (con errores intencionales) -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <!-- ERROR intencional: falta container (o container-fluid) -->
-    <a class="navbar-brand" href="#">Mi sitio</a>
+    <div class="container">
+      <a class="navbar-brand" href="#">Mi sitio</a>
 
-    <!-- ERROR intencional: el toggler apunta a un id que NO existe -->
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu-principal">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-    <!-- ERROR intencional: este id NO coincide con data-bs-target -->
-    <div class="collapse navbar-collapse" id="menu">
-      <ul class="navbar-nav ms-auto">
-        <!-- ERROR intencional: href="#" sin funcionalidad -->
-        <li class="nav-item"><a class="nav-link" href="#">Inicio</a></li>
-        <li class="nav-item"><a class="nav-link" href="#">Proyectos</a></li>
-        <li class="nav-item"><a class="nav-link" href="#">Contacto</a></li>
-      </ul>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#inicio">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link" href="#sobre-mi">Sobre mí</a></li>
+          <li class="nav-item"><a class="nav-link" href="#proyectos">Proyectos</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
+        </ul>
+      </div>
     </div>
   </nav>
 
-  <!-- HERO (poco spacing, jerarquía débil a propósito) -->
-  <section class="bg-light">
-    <div>
-      <h1>Bienvenido</h1>
-      <p>Esta landing tiene errores. Tu trabajo es auditarlos y corregirlos.</p>
-
-      <!-- Botón sin acción real -->
-      <a href="#" class="btn btn-primary">Agendar</a>
+  <section id="inicio" class="py-5 bg-light">
+    <div class="container text-center">
+      <h1 class="display-4">Bienvenido</h1>
+      <p class="lead">Esta landing tenía errores. Ha sido auditada y corregida profesionalmente con Bootstrap.</p>
+      <a href="#contacto" class="btn btn-primary btn-lg">Agendar reunión</a>
     </div>
   </section>
 
-  <!-- SOBRE MI / PERFIL (GRID mal distribuido 5 + 8) -->
-  <section id="sobre-mi">
+  <section id="sobre-mi" class="py-5">
     <div class="container">
-      <h2>Sobre mí</h2>
+      <h2 class="text-center mb-5">Sobre mí</h2>
 
-      <div class="row">
-        <!-- ERROR intencional: 5 + 8 = 13 (rompe el sistema de 12) -->
-        <div class="col-md-5">
-          <!-- ERROR intencional: imagen sin img-fluid -->
-          <img src="https://via.placeholder.com/260" alt="Foto de perfil" class="rounded-circle">
+      <div class="row align-items-center">
+        <div class="col-12 col-md-4 text-center mb-4 mb-md-0">
+          <img src="img/gatitotraje.jpg"Foto de perfil" class="rounded-circle img-fluid shadow" style="max-width: 200px;">
         </div>
 
-        <div class="col-md-8">
-          <p>
-            Texto descriptivo. Aquí debe verse una jerarquía visual clara:
-            imagen → título → texto → acción.
-          </p>
-
-          <!-- Link sin objetivo -->
-          <a href="#" class="btn btn-outline-dark">Ver CV</a>
+        <div class="col-12 col-md-8">
+          <p class="lead">
+            Mis tranajo me apasiona soy una gran profecional, cuento con varias habilidades
+                    </p>
+          <a href="pdfs/Curriculum CV de Hombre Profesional con Foto Moderno Azul y Gris.pdf" download="CV-Nombre" class="btn btn-outline-dark">Descargar CV</a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- PROYECTOS (cards sin h-100, sin jerarquía, sin grid responsive) -->
-  <section id="proyectos" class="bg-light">
+  <section id="proyectos" class="py-5 bg-light">
     <div class="container">
-      <h2>Proyectos</h2>
+      <h2 class="text-center mb-5">Proyectos</h2>
 
-      <div class="row">
-        <!-- ERROR intencional: solo col-md-4 (sin estrategia col-12 / col-lg-*) -->
-        <div class="col-md-4">
-          <div class="card">
-            <!-- ERROR intencional: imagen sin clase responsive -->
-            <img src="https://via.placeholder.com/600x300" class="card-img-top" alt="Proyecto 1">
+      <div class="row g-4">
+        <div class="col-12 col-md-4">
+          <div class="card h-100 shadow-sm">
+            <img src="https://radicalhub.com/wp-content/uploads/2018/07/javascript.jpg" class="card-img-top img-fluid" alt="Proyecto 1">
             <div class="card-body">
               <h5 class="card-title">Proyecto 1</h5>
-              <p class="card-text">Descripción corta.</p>
-              <!-- ERROR intencional: href sin funcionalidad -->
-              <a href="#" class="btn btn-primary">Ver</a>
+              <p class="card-text">Porgram detallado en calculos de una constructura en java scrip.</p>
+              <a href="#contacto" class="btn btn-primary">Saber más</a>
             </div>
           </div>
         </div>
 
-        <div class="col-md-4">
-          <div class="card">
-            <img src="https://via.placeholder.com/600x300" class="card-img-top" alt="Proyecto 2">
+        <div class="col-12 col-md-4">
+          <div class="card h-100 shadow-sm">
+            <img src="https://www.thoughtco.com/thmb/jFJZeg1yzXemT_dLptoFVw1Z6Gs=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/JavaScript-58acbb8a3df78c345bad32c2.jpg" class="card-img-top img-fluid" alt="Proyecto 2">
             <div class="card-body">
               <h5 class="card-title">Proyecto 2</h5>
-              <p class="card-text">Descripción corta.</p>
-              <a href="#" class="btn btn-primary">Ver</a>
+              <p class="card-text">Tengo un gran conocimiento fuerte en aprendizaje de lenguajes de programacion he trabajado en mas de 10 proyectos.</p>
+              <a href="#contacto" class="btn btn-primary">Saber más</a>
             </div>
           </div>
         </div>
 
-        <div class="col-md-4">
-          <div class="card">
-            <img src="https://via.placeholder.com/600x300" class="card-img-top" alt="Proyecto 3">
+        <div class="col-12 col-md-4">
+          <div class="card h-100 shadow-sm">
+            <img src="https://www.conocetusdatos.com/wp-content/uploads/2019/12/bases-de-datos-scaled.jpg" class="card-img-top img-fluid" alt="Proyecto 3">
             <div class="card-body">
               <h5 class="card-title">Proyecto 3</h5>
-              <p class="card-text">Descripción corta.</p>
-              <a href="#" class="btn btn-primary">Ver</a>
+              <p class="card-text">Tengo un gran amplio conocimientos y ams de 4 proyectos en base de datos.</p>
+              <a href="#contacto" class="btn btn-primary">Saber más</a>
             </div>
           </div>
         </div>
-
       </div>
     </div>
   </section>
 
-  <!-- CONTACTO (id existe, pero navbar NO navega aquí por href #) -->
-  <section id="contacto">
+  <section id="contacto" class="py-5">
     <div class="container">
-      <h2>Contacto</h2>
+      <h2 class="text-center mb-5">Contacto</h2>
 
-      <form>
+      <form action="#" method="post" class="col-12 col-md-8 col-lg-6 mx-auto">
         <div class="mb-3">
-          <input type="text" class="form-control" placeholder="Nombre">
+          <label for="nombre" class="form-label">Nombre completo</label>
+          <input type="text" class="form-control" id="nombre" placeholder="Ej. Juan Pérez" required>
         </div>
         <div class="mb-3">
-          <input type="email" class="form-control" placeholder="Correo">
+          <label for="correo" class="form-label">Correo electrónico</label>
+          <input type="email" class="form-control" id="correo" placeholder="nombre@ejemplo.com" required>
         </div>
-        <button class="btn btn-dark" type="submit">Enviar</button>
+        <div class="mb-3">
+          <label for="mensaje" class="form-label">Mensaje</label>
+          <textarea class="form-control" id="mensaje" rows="3" placeholder="¿En qué puedo ayudarte?" required></textarea>
+        </div>
+        <div class="text-center">
+          <button class="btn btn-dark" type="submit">Enviar mensaje</button>
+        </div>
       </form>
     </div>
   </section>
 
-  <footer class="bg-dark text-white text-center">
-    <p>© 2026</p>
+  <footer class="bg-dark text-white text-center py-3">
+    <p class="mb-0">© 2026 Mi Sitio. Todos los derechos reservados.</p>
   </footer>
 
-  <!-- Bootstrap JS (OK) -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
